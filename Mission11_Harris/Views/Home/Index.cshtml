@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model BooksListViewModel
+<!--Abby Harris
+    Section 001
+    Mission 11 - build a website to display books in an online bookstore 
+-->
+    <h1>Welcome to my Bookstore</h1>
+        @foreach (Book b in Model.Books)
+    {
+        <partial name="BookSummary" model="b"/>
+    }
+    <!--Create a tag to move between pages-->
+    <div page-model="@Model.PaginationInfo" page-action="Index" page-classes-enabled="true" page-class="btn" page-class-normal="btn-outline-dark" page-class-selected="btn-primary" class="btn-group pull-right m-1">
+    </div>
